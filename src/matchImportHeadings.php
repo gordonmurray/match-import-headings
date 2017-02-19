@@ -61,8 +61,6 @@ class matchImportHeadings
      */
     public function synonymMatch($synonymsArray = array(), $headings = array())
     {
-        //$matchedHeadings = array();
-
         foreach ($headings as $key =>$heading) {
             if (isset($heading['match']) && $heading['match']=='') {
                 foreach ($synonymsArray as $parentString => $synonyms) {
