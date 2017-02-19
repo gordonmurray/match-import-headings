@@ -1,5 +1,5 @@
 {
-    "name": "gordonmurrray/match-import-headings",
+    "name": "gordonmurray/match-import-headings",
     "description": "A small class to match cleaned headings on an imported CSV to known column headings",
     "keywords": ["imports", "csv", "headings"],
     "license": "MIT",
