@@ -6,6 +6,9 @@ use gordonmurray\matchImportHeadings;
 
 class cleanMatchHeadingsTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * Test to make sure first name and last name are matched directly
+     */
     public function testDirectMatch()
     {
         $matchImportHeadings = new matchImportHeadings();
@@ -25,6 +28,9 @@ class cleanMatchHeadingsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expectedResponse, $response);
     }
 
+    /**
+     * Test to make sure that 'org' is matched to 'place of work', as that is a synonym
+     */
     public function testSynonymMatch()
     {
         $matchImportHeadings = new matchImportHeadings();
@@ -50,6 +56,26 @@ class cleanMatchHeadingsTest extends PHPUnit_Framework_TestCase
         );
 
         $response = $matchImportHeadings->synonymMatch($synonyms, $headings);
+
+        $this->assertEquals($expectedResponse, $response);
+    }
+
+    public function testMatchLevenshtein()
+    {
+        $matchImportHeadings = new matchImportHeadings();
+
+        $knownHeadings = array('something','country','something else');
+
+        $headings  = array(
+            array('value'=>'county','match'=>''),
+        );
+
+        $expectedResponse = array(
+            array('value'=>'county','match'=>'','potentialMatch'=>'country'),
+        );
+
+
+        $response = $matchImportHeadings->matchLevenshtein($knownHeadings, $headings);
 
         $this->assertEquals($expectedResponse, $response);
     }
