@@ -1,4 +1,4 @@
-# Match CSV Import headings
+# Match CSV Import headings 
 
 [![Build Status](https://travis-ci.org/gordonmurray/match-import-headings.svg?branch=master)](https://travis-ci.org/gordonmurray/match-import-headings) [![Coverage Status](https://coveralls.io/repos/github/gordonmurray/match-import-headings/badge.svg?branch=master)](https://coveralls.io/github/gordonmurray/match-import-headings?branch=master)
 
